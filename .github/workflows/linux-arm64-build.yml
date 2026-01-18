@@ -49,6 +49,10 @@ jobs:
     container:
       image: alpine:3.23
     steps:
+      - name: Arm64 compatibilty
+        uses: laverdet/alpine-arm64@v1
+        if: matrix.platform == 'arm64'
+
       - name: Checkout
         uses: actions/checkout@v4
 
