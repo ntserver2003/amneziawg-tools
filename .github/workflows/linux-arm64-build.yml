@@ -56,7 +56,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: alpine-3.19-amneziawg-tools-arm64
+          name: alpine-3.19-amd64-amneziawg-tools
           path: ./src/build
 
   GitHub-Release:
