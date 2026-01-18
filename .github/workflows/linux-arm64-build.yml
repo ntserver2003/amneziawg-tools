@@ -1,4 +1,4 @@
-name: Linux
+name: Linux with Arm64
 
 on: [push]
 
