@@ -32,7 +32,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ubuntu-22.04-amneziawg-tools
+          name: ubuntu-22.04-${{ matrix.platform }}-amneziawg-tools
           path: ./src/build
 
   Build-for-Alpine:
@@ -84,7 +84,7 @@ jobs:
         run: for file in $(find ./${{ matrix.os }}-${{ matrix.release }}-${{ matrix.platform }}-amneziawg-tools/ -type f); do openssl dgst -sha256 -r "$file" | awk '{print $1}' > "${file}.sha256"; done
 
       - name: Zip files
-        run: zip -r ${{ matrix.os }}-${{ matrix.release }}-amneziawg-tools.zip ${{ matrix.os }}-${{ matrix.release }}-${{ matrix.platform }}-amneziawg-tools
+        run: zip -r ${{ matrix.os }}-${{ matrix.release }}-${{ matrix.platform }}-amneziawg-tools.zip ${{ matrix.os }}-${{ matrix.release }}-${{ matrix.platform }}-amneziawg-tools
 
       - name: Upload binaries to Release
         uses: svenstaro/upload-release-action@v2
