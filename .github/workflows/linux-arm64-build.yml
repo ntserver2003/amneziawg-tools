@@ -68,7 +68,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: alpine-3.19-amd64-amneziawg-tools
+          name: alpine-3.23-${{ matrix.platform }}-amneziawg-tools
           path: ./src/build
 
   GitHub-Release:
@@ -84,7 +84,7 @@ jobs:
             release: "22.04"
             platform: "arm64"
           - os: "alpine"
-            release: "3.19"
+            release: "3.23"
             platform: "amd64"
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
