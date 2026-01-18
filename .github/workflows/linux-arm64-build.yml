@@ -21,8 +21,8 @@ jobs:
 
       - name: Build AmneziaWG tools
         run: |
-          apt -y update &&
-          apt -y install build-essential &&
+          sudo apt -y update &&
+          sudo apt -y install build-essential &&
           cd src &&
           make &&
           mkdir build &&
